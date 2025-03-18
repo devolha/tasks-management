@@ -10,6 +10,7 @@ def options_menu():
     return options
     
 def add_task(task_list):
+
     if not task_list:
         print("You have no tasks yet. Don't worry, let's write the first one!")
         number = int(input("Write a number of task: "))
@@ -21,14 +22,10 @@ def add_task(task_list):
             "priority": priority,
             "name": name}
         print("\nGreat! Your task was written!")
-        print(task_list)
-    else: 
-        print("\nYou can choose another options. What's next?")
-
-    if number in task_list:
+        
+    elif number in task_list:
         print(f"You already have task number {number}. Please choose another number.")
     
-
 def delete_task():
     return None
 
@@ -56,6 +53,9 @@ while True:
     try:
         if user_input == "a":
             add_task(task_list)
+            print("You can choose another option or exit the program. What's next?")
+            print(options)
+            input()
             
         elif user_input == "b":
             delete_task()
